@@ -557,26 +557,30 @@ class WeiBo(object):
         """
             打印用户信息
         """
-        print('+' * 100)
-        print('用户信息')
-        print('用户id：{0}'.format(self.user['id']))
-        print('用户昵称：{0}'.format(self.user['screen_name']))
-        gender = '女' if self.user['gender'] == 'f' else '男'
-        print('性别：{0}'.format(gender))
-        print('生日：{0}'.format(self.user['birthday']))
-        print('所在地：{0}'.format(self.user['location']))
-        print('教育经历：{0}'.format(self.user['education']))
-        print('公司：{0}'.format(self.user['company']))
-        print('阳光信用：{0}'.format(self.user['sunshine']))
-        print('注册时间：{0}'.format(self.user['registration_time']))
-        print('微博数：{0}'.format(self.user['statuses_count']))
-        print('粉丝数：{0}'.format(self.user['followers_count']))
-        print('关注数：{0}'.format(self.user['follow_count']))
-        print('url：https://m.weibo.cn/profile/{0}'.format(self.user['id']))
-        if self.user.get('verified_reason'):
-            print(self.user['verified_reason'])
-        print(self.user['description'])
-        print('+' * 100)
+        try:
+            print('+' * 100)
+            print('用户信息')
+            print('用户id：{0}'.format(self.user['id']))
+            print('用户昵称：{0}'.format(self.user['screen_name']))
+            gender = '女' if self.user['gender'] == 'f' else '男'
+            print('性别：{0}'.format(gender))
+            print('生日：{0}'.format(self.user['birthday']))
+            print('所在地：{0}'.format(self.user['location']))
+            print('教育经历：{0}'.format(self.user['education']))
+            print('公司：{0}'.format(self.user['company']))
+            print('阳光信用：{0}'.format(self.user['sunshine']))
+            print('注册时间：{0}'.format(self.user['registration_time']))
+            print('微博数：{0}'.format(self.user['statuses_count']))
+            print('粉丝数：{0}'.format(self.user['followers_count']))
+            print('关注数：{0}'.format(self.user['follow_count']))
+            print('url：https://m.weibo.cn/profile/{0}'.format(self.user['id']))
+            if self.user.get('verified_reason'):
+                print(self.user['verified_reason'])
+            print(self.user['description'])
+            print('+' * 100)
+        except Exception as e:
+            print(repr(e))
+            traceback.print_exc()
 
     @staticmethod
     def print_one_weibo(weibo):

@@ -580,7 +580,7 @@ class WeiBo(object):
             print('+' * 100)
         except Exception as e:
             print(repr(e))
-            traceback.print_exc()
+            sys.exit(traceback.format_exc())
 
     @staticmethod
     def print_one_weibo(weibo):

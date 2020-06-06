@@ -114,7 +114,7 @@ class WeiBo(object):
             获取网页中微博json数据
         """
         params = {
-            'container_id': '107603' + str(self.user_config['user_id']),
+            'containerid': '107603' + str(self.user_config['user_id']),
             'page': page
         }
         js = self.get_json(params)
@@ -199,7 +199,7 @@ class WeiBo(object):
         """
             获取用户信息
         """
-        params = {'container_id': '100505' + str(self.user_config['user_id'])}
+        params = {'containerid': '100505' + str(self.user_config['user_id'])}
         js = self.get_json(params)
         if js['ok']:
             info = js['data']['userInfo']
@@ -208,7 +208,7 @@ class WeiBo(object):
             user_info['screen_name'] = info.get('screen_name', '')
             user_info['gender'] = info.get('gender', '')
             params = {
-                'container_id':
+                'containerid':
                 '230283' + str(self.user_config['user_id']) + '_-_INFO'
             }
             zh_list = [
